@@ -28,6 +28,8 @@ var app = angular.module('app-sample', ['ionic'])
     abstract: true,
     templateUrl: "template/tab.html"
   })
+
+  // home
   .state('tabs.home', {
     url: "/home",
     views: {
@@ -36,6 +38,8 @@ var app = angular.module('app-sample', ['ionic'])
       }
     }
   })
+
+  // ui
   .state('tabs.ui', {
     url: "/ui",
     views: {
@@ -52,6 +56,64 @@ var app = angular.module('app-sample', ['ionic'])
       }
     }
   })
+  .state('tabs.input', {
+    url: "/ui/input",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/input.html"
+      }
+    }
+  })
+  .state('tabs.loading', {
+    url: "/ui/loading",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/loading.html"
+      }
+    }
+  })
+  .state('tabs.modal', {
+    url: "/ui/modal",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/modal.html"
+      }
+    }
+  })
+  .state('tabs.navigation', {
+    url: "/ui/navigation",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/navigation.html"
+      }
+    }
+  })
+  .state('tabs.page1', {
+    url: "/ui/page1",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/page1.html"
+      }
+    }
+  })
+  .state('tabs.page2', {
+    url: "/ui/page2",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/page2.html"
+      }
+    }
+  })
+  .state('tabs.slidebox', {
+    url: "/ui/slidebox",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/slidebox.html"
+      }
+    }
+  })
+
+  // native
   .state('tabs.native', {
     url: "/native",
     views: {

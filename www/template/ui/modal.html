@@ -1,0 +1,13 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Modal" ng-controller="modalCtrl">
+	<ion-content class="padding">
+		<!-- The content of the page -->
+		<h3>Modal</h3>
+		<button class="button button-stable" ng-click="showModal()">
+		  Modal open~!
+		</button>
+		<button class="button button-stable" ng-click="openPopover($event)">
+		  Popup Over
+		</button>
+	</ion-content>
+</ion-view>

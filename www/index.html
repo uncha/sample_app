@@ -41,6 +41,29 @@
              
     <ion-nav-view></ion-nav-view>
 
+    <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">Modal View</h1>
+          <div class="buttons">
+            <button class="button" ng-click="hideModal()">closeModal</button>
+          </div>
+        </ion-header-bar>
+        <ion-content>
+          <h3>Hello I'm Modal</h3>
+        </ion-content>
+      </ion-modal-view>
+    </script>
     
+    <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+          <h1 class="title">My Popover Title</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+        </ion-content>
+      </ion-popover-view>
+    </script>
   </body>
 </html>

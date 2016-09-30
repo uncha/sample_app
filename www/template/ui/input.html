@@ -1,0 +1,40 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Form Input" ng-controller="inputCtrl">
+	<ion-content>
+		<form name="myForm">
+			<!-- The content of the page -->
+			<h3 class="padding">Form Input</h3>
+
+			<!--// check box -->
+			<div class="item item-divider">check box</div>
+			<ion-checkbox ng-model="chk1">chk1</ion-checkbox>
+			<ion-checkbox ng-model="chk2">chk2</ion-checkbox>
+			<ion-checkbox ng-model="chk3">chk3</ion-checkbox>
+			<ion-checkbox ng-model="chk4">chk4</ion-checkbox>
+			<p class="item" href="#">
+				<span>checked value : </span>
+				<span ng-show="chk1">chk1</span>
+				<span ng-show="chk2">chk2</span>
+				<span ng-show="chk3">chk3</span>
+				<span ng-show="chk4">chk4</span>
+			</p>
+
+			<!--// radio button -->
+			<div class="item item-divider">radio button</div>
+			<ion-radio ng-model="choice" ng-value="'A'" ng-change="onChange('A')">Choose A</ion-radio>
+			<ion-radio ng-model="choice" ng-value="'B'" ng-change="onChange('B')">Choose B</ion-radio>
+			<ion-radio ng-model="choice" ng-value="'C'" ng-change="onChange('C')">Choose C</ion-radio>
+			<p class="item" href="#">
+				<span>checked value : {{choice}}</span>
+			</p>
+
+			<!--// toggle -->
+			<div class="item item-divider">toggle</div>
+			<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">Airplane Mode</ion-toggle>
+			<p class="item" href="#">
+				<span>checked value : </span>
+				<span ng-show="airplaneMode">airplaneMode</span>
+			</p>
+		</form>
+	</ion-content>
+</ion-view>

@@ -4,8 +4,8 @@
 		<!-- The content of the page -->
 		<h3 class="padding">UI List</h3>
 		<ion-list>
-			<ion-item ng-repeat="item in list" href="#/tab/ui/button">
-				<h2>{{item}}</h2>
+			<ion-item ng-repeat="item in list" href="{{item.url}}">
+				<h2>{{item.title}}</h2>
             </ion-item>
 		</ion-list>
 	</ion-content>

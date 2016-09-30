@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+.slider {
+  height: 100%;
+}
+.scroll{height: 100%}
+
+.box{height: 100%}
+.blue{background: blue; color:#FFF}
+.blue h1{color:#FFF !important;}
+.yellow{background: yellow}
+.pink{background: pink}
