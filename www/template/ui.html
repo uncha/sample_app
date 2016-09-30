@@ -1,0 +1,12 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="UI" ng-controller="uiListCtrl">
+	<ion-content>
+		<!-- The content of the page -->
+		<h3 class="padding">UI List</h3>
+		<ion-list>
+			<ion-item ng-repeat="item in list" href="#/tab/ui/button">
+				<h2>{{item}}</h2>
+            </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

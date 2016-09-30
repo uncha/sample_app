@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('app-sample', ['ionic'])
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -22,21 +21,46 @@ var app = angular.module('app-sample', ['ionic'])
     }
   });
 })
-
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){
   $stateProvider
-  .state('main', {
-    url: "/main",
-    templateUrl: "main.html"
+  .state('tabs', {
+    url: "/tab",
+    abstract: true,
+    templateUrl: "template/tab.html"
   })
-  .state('music', {
-    url: "/music",
-    templateUrl: "template/music.html"
+  .state('tabs.home', {
+    url: "/home",
+    views: {
+      'home-tab': {
+        templateUrl: "template/home.html"
+      }
+    }
   })
-  .state('cat', {
-    url: "/cat",
-    templateUrl: "template/cat.html"
+  .state('tabs.ui', {
+    url: "/ui",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui.html"
+      }
+    }
+  })
+  .state('tabs.button', {
+    url: "/ui/button",
+    views: {
+      'ui-tab': {
+        templateUrl: "template/ui/button.html"
+      }
+    }
+  })
+  .state('tabs.native', {
+    url: "/native",
+    views: {
+      'native-tab': {
+        templateUrl: "template/native.html"
+      }
+    }
   })
 
-  $urlRouterProvider.otherwise("/main");
+  $urlRouterProvider.otherwise("/tab/home");
+  $ionicConfigProvider.navBar.alignTitle('center');
 });
