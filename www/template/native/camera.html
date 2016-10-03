@@ -1,0 +1,16 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Camera" ng-controller="cameraCtrl">
+	<ion-content>
+		<!-- The content of the page -->
+		<h3 class="padding">Camera</h3>
+		<button ng-click="onCamera()" class="button button-assertive ion-paperclip" style="margin: 10px">
+		  camera on
+		</button>
+		<ion-list>
+			<ion-item class="item item-avatar" ng-repeat="data in picList">
+				<img src={{data.uri}}>
+			    <h2>{{data.subject}}</h2>
+            </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

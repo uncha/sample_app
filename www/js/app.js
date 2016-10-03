@@ -122,6 +122,22 @@ var app = angular.module('app-sample', ['ionic'])
       }
     }
   })
+  .state('tabs.camera', {
+    url: "/native/camera",
+    views: {
+      'native-tab': {
+        templateUrl: "template/native/camera.html"
+      }
+    }
+  })
+  .state('tabs.accelerometer', {
+    url: "/native/accelerometer",
+    views: {
+      'native-tab': {
+        templateUrl: "template/native/accelerometer.html"
+      }
+    }
+  })
 
   $urlRouterProvider.otherwise("/tab/home");
   $ionicConfigProvider.navBar.alignTitle('center');

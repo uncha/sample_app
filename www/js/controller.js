@@ -27,6 +27,19 @@ app.controller('uiListCtrl', function($scope){
 	];
 });
 
+app.controller('nativeListCtrl', function($scope){
+	$scope.list = [
+		{
+			title:'Camera',
+			url:'#/tab/native/camera'
+		},
+		{
+			title:'Accelerometer',
+			url:'#/tab/native/accelerometer'
+		}
+	];
+});
+
 app.controller('buttonsCtrl', function($scope, $ionicPopup){
 	$scope.onTab = function(){
 		var alertPopup = $ionicPopup.alert({
@@ -97,3 +110,73 @@ app.controller('modalCtrl', function($scope, $ionicModal, $ionicPopover){
 		$scope.popover.show($event);
 	}
 });
+
+app.controller('cameraCtrl', function($scope){
+    $scope.picList = [
+    	
+    ];
+
+    $scope.onCamera = function(){
+    	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+    }
+
+	function onSuccess(imageURI) {
+	    $scope.picList.push({
+	    	uri:imageURI,
+	    	subject:new Date()
+	    });
+
+	    $scope.$apply();
+	}
+
+	function onFail(message) {
+	    alert('Failed because: ' + message);
+	}
+});
+
+app.controller('accelerometerCtrl', function($scope){
+	function onSuccess(acceleration) {
+    	console.log('Acceleration X: ' + acceleration.x + '\n' +
+			        'Acceleration Y: ' + acceleration.y + '\n' +
+			        'Acceleration Z: ' + acceleration.z + '\n' +
+			        'Timestamp: '      + acceleration.timestamp + '\n');
+
+    	$scope.accelerationData = {
+    		x:acceleration.x,
+    		y:acceleration.y,
+    		z:acceleration.z
+    	};
+    	$scope.$apply();
+	}
+
+	function onError() {
+	    console.log('onError!');
+	}
+
+	var options = { frequency: 100 };  // Update every 3 seconds
+	var watchID;
+	$scope.onStart = function(){
+		$scope.onEnd();
+		watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+	}
+
+	$scope.onEnd = function(){
+		if(watchID) navigator.accelerometer.clearWatch(watchID);
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

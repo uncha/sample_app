@@ -1,0 +1,20 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Accelerometer" ng-controller="accelerometerCtrl">
+	<ion-content class="padding">
+		<!-- The content of the page -->
+		<h3>Accelerometer</h3>
+		<button ng-click="onStart()" class="button button-assertive" style="margin: 2px">
+		  start
+		</button>
+		<button ng-click="onEnd()" class="button button-positive" style="margin: 2px">
+		  pause
+		</button>
+		<div class="card" ng-show="accelerationData">
+		  <div class="item item-text-wrap">
+		    <p>Acceleration X: <span>{{accelerationData.x}}</span></p>
+		    <p>Acceleration Y: <span>{{accelerationData.y}}</span></p>
+		    <p>Acceleration Z: <span>{{accelerationData.z}}</span></p>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>
