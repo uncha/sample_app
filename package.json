@@ -22,7 +22,8 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "cordova-plugin-camera",
-    "cordova-plugin-device-motion"
+    "cordova-plugin-device-motion",
+    "cordova-plugin-contacts"
   ],
   "cordovaPlatforms": []
 }

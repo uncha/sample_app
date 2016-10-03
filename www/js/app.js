@@ -138,7 +138,19 @@ var app = angular.module('app-sample', ['ionic'])
       }
     }
   })
-
+  .state('tabs.contacts', {
+    url: "/native/contacts",
+    views: {
+      'native-tab': {
+        templateUrl: "template/native/contacts.html"
+      }
+    }
+  })
+  
   $urlRouterProvider.otherwise("/tab/home");
   $ionicConfigProvider.navBar.alignTitle('center');
+  $ionicConfigProvider.tabs.position('bottom');
 });
+
+
+

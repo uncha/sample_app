@@ -36,6 +36,10 @@ app.controller('nativeListCtrl', function($scope){
 		{
 			title:'Accelerometer',
 			url:'#/tab/native/accelerometer'
+		},
+		{
+			title:'Contacts',
+			url:'#/tab/native/contacts'
 		}
 	];
 });
@@ -165,7 +169,49 @@ app.controller('accelerometerCtrl', function($scope){
 	}
 });
 
+app.controller('contactsCtrl', function($scope, $ionicLoading){
+	$scope.cantactsList = [];
 
+	$ionicLoading.show({
+      template: 'Loading...'
+    }).then(function(){
+       console.log("The loading indicator is now displayed");
+    });
+
+	function onSuccess(contacts) {
+	    for(var i in contacts){
+	    	var phoneNumber;
+
+	    	for(var j in contacts[i].phoneNumbers){
+	    		if(contacts[i].phoneNumbers[j].value){
+	    			phoneNumber = contacts[i].phoneNumbers[j].value;
+	    			break;
+	    		}
+	    	}
+
+	    	$scope.cantactsList.push({
+	    		name:contacts[i].displayName,
+	    		phoneNumber:phoneNumber
+	    	});
+	    }
+
+	    $scope.$apply();
+	    
+	    $ionicLoading.hide().then(function(){
+	       console.log("The loading indicator is now hidden");
+	    });
+	};
+
+	function onError(contactError) {
+	    alert('onError!');
+	};
+
+	var options = new ContactFindOptions();
+	options.filter = "";
+	options.multiple = true;
+	var filter = ["displayName", "addresses"];
+	navigator.contacts.find(filter, onSuccess, onError, options);
+});
 
 
 

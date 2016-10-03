@@ -1,0 +1,15 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Contacts" ng-controller="contactsCtrl">
+	<ion-content>
+		<!-- The content of the page -->
+		<h3 class="padding">Contacts</h3>
+		<ion-list>
+			<ion-item ng-if="contact.name" class="item item-button-right" ng-repeat="contact in cantactsList">
+			    <h2>{{contact.name}}</h2>
+			    <a ng-href="tel:{{contact.phoneNumber}}" class="button button-positive">
+			      <i class="icon ion-ios-telephone"></i>
+			    </a>
+            </ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
